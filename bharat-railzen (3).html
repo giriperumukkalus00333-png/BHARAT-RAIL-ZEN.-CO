@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bharat RailZen IoT – Harmony in Every Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+Tamil:wght@600;700&family=Noto+Sans+Devanagari:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
+:root{--saf:#ff671f;--navy:#000080;--green:#046a38;--ink:#071435;--deep:#050c1f;--ok:#10b981;--warn:#f59e0b;--bad:#dc2626;--line:#e2e8f0;--mut:#475569;--f:'Inter','Noto Sans Tamil','Noto Sans Devanagari',system-ui,sans-serif;--m:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0}
+body{font:800 14px/1.5 var(--f);color:#334155;background:#fff}
+a{color:inherit;text-decoration:none}
+.w{max-width:1280px;margin:0 auto;padding:0 32px}
+.ribbon{height:6px;background:linear-gradient(90deg,var(--saf) 33%,#fff 33% 66%,var(--green) 66%)}
+h1,h2,h3{font-weight:900;color:var(--navy)}
+.eyebrow{color:var(--saf);font-size:12px;font-weight:900;letter-spacing:.6px;text-transform:uppercase}
+.head{text-align:center;max-width:768px;margin:0 auto 32px}
+.head h2{font-size:36px;line-height:40px;letter-spacing:-.9px;margin:8px 0}
+.head .ta{color:var(--saf);font-weight:900;font-size:16px}
+.head p{color:var(--mut)}
+nav{position:sticky;top:0;z-index:20;height:80px;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:2px solid rgba(0,0,128,.1)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:100%;gap:16px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{position:relative;width:38px;height:44px;border-radius:50%;border:2px solid var(--saf);background:linear-gradient(50deg,#000080,#1e3a8a);display:grid;place-items:center}
+.logo i{position:absolute;right:-4px;bottom:-4px;width:18px;height:18px;border-radius:50%;background:var(--green);border:2px solid #fff}
+.brand b{font-size:24px;font-weight:900;color:var(--navy);letter-spacing:-.6px}
+.tag{font-size:10px;font-weight:900;color:var(--saf);background:rgba(255,103,31,.15);border:1px solid rgba(255,103,31,.3);padding:1px 7px;border-radius:4px;margin-left:6px;vertical-align:4px}
+.brand small{display:block;font-size:11px;color:var(--green);font-weight:700;letter-spacing:.5px}
+.links{display:flex;gap:28px;font-size:16px;font-weight:800;letter-spacing:.4px}
+.links a{padding:4px 0 6px;border-bottom:2px solid transparent}
+.links a.on{color:var(--navy);font-weight:900;border-color:var(--saf)}
+.cta{display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 16px;border-radius:8px;border:0;font:900 12px var(--f);color:#fff;background:var(--saf);cursor:pointer;text-transform:uppercase;letter-spacing:.3px}
+.btn.dk{background:var(--ink);text-transform:none;letter-spacing:0}
+.hero{background:linear-gradient(#050c1f,#000080 50%,#071435);padding:112px 0 80px;position:relative;overflow:hidden;color:#fff}
+.hero:before{content:"";position:absolute;left:50%;top:50%;width:980px;height:980px;transform:translate(-50%,-50%);border:32px solid rgba(255,103,31,.4);border-radius:50%;opacity:.1}
+.hero:after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,var(--saf),#fff,var(--green));opacity:.1}
+.hero .w{position:relative;z-index:1;text-align:center}
+.pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:7px 17px;font-size:12px;font-weight:900;letter-spacing:.6px;text-transform:uppercase}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);display:inline-block}
+.hero h1{color:#fff;font-size:60px;line-height:60px;letter-spacing:-1.5px;margin:16px 0 12px}
+.hero h1 span{color:var(--saf)}
+.hero .sub{font-size:20px;line-height:28px;color:#e2e8f0;max-width:768px;margin:0 auto 24px}
+.hud{max-width:1152px;margin:0 auto 24px;background:#fff;border:4px solid var(--saf);border-radius:16px;padding:4px;text-align:left;color:#334155;box-shadow:0 25px 50px -12px rgba(0,0,0,.4);overflow:hidden}
+.hud-h{background:var(--navy);border-bottom:2px solid var(--saf);color:#fff;padding:12px 20px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.hud-h strong{font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.35px}
+.gl{background:var(--green);border-radius:99px;padding:2px 8px;font-size:10px;font-weight:900;margin-left:8px}
+.hud-h small{display:block;color:#cbd5e1;font-size:11px;font-weight:700}
+.stat{background:rgba(5,12,31,.6);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:7px 13px;font:700 12px var(--m);color:var(--ok)}
+.stat b{color:var(--saf)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr)}
+.q{padding:20px 20px 24px;border-left:2px solid var(--line)}
+.q:first-child{border:0}
+.q1{background:linear-gradient(rgba(240,253,244,.7),#fff)}.q2{background:linear-gradient(rgba(255,247,237,.7),#fff)}.q3{background:linear-gradient(rgba(239,246,255,.7),#fff)}
+.qt{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.badge{color:#fff;border-radius:4px;padding:4px 10px;font-size:11px;font-weight:900;letter-spacing:.55px;text-transform:uppercase}
+.big{font-size:30px;line-height:36px;font-weight:900;color:var(--navy);margin:4px 0}
+.big u{color:var(--green);text-decoration-thickness:3px}.big em{font-style:normal;color:var(--saf)}
+.q p{font-size:12px;margin-bottom:9px}
+.note{border-radius:4px;padding:4px 8px;font-size:11px;font-weight:700}
+.trainhero{max-width:1024px;margin:0 auto;border:4px solid rgba(255,255,255,.2);border-radius:16px;padding:20px 4px 4px;box-shadow:0 25px 50px -12px rgba(0,0,0,.4)}
+.photo{position:relative;height:435px;border-radius:12px;overflow:hidden;background:linear-gradient(to top,rgba(5,12,31,.9),rgba(5,12,31,.3) 50%,transparent),linear-gradient(135deg,#334e68,#0f172a 60%,#1e3a5f)} /* TODO: replace with hero train photo exported from Figma node 8:98 */
+.photo .top{position:absolute;left:16px;top:16px;display:flex;gap:8px;flex-wrap:wrap;font:700 11px var(--m);text-transform:uppercase;letter-spacing:.55px}
+.photo .top span{border-radius:8px;padding:7px 15px}
+.photo .bar{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(5,12,31,.85);border:2px solid rgba(255,255,255,.2);border-radius:12px;padding:18px;text-align:left;backdrop-filter:blur(6px)}
+.photo .bar small{font:700 11px var(--m);color:var(--saf);letter-spacing:.55px}
+.photo .bar div{font-weight:900;font-size:16px;color:#fff}
+.photo .bar code{font:400 12px var(--m);color:#e2e8f0}.photo .bar code b{color:var(--ok)}
+.photo .bar em{font:700 11px var(--m);background:var(--green);border-radius:4px;padding:4px 12px;font-style:normal;margin-left:12px}
+.radar{padding:64px 0 98px;border-bottom:2px solid var(--line)}
+.legend{max-width:1024px;margin:0 auto 32px;background:#f8fafc;border:2px solid var(--line);border-radius:12px;padding:26px 18px 18px;text-align:center}
+.legend h4{font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px;font-weight:900}
+.lv{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:left}
+.lv div{border:2px solid;border-radius:8px;padding:12px;display:flex;gap:10px;font-size:11px}
+.lv i{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-style:normal;color:#fff;margin-top:2px}
+.lv b{display:block;font-size:12px;font-weight:900}
+.lv small{display:block;font-size:10px;color:#64748b}
+.rail{background:var(--ink);border:4px solid var(--navy);border-radius:16px;padding:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,.4);color:#e2e8f0}
+.rh{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:700 12px var(--m);padding-bottom:17px;border-bottom:1px solid rgba(255,255,255,.15)}
+.rh b{color:var(--saf)}.rh b span{color:#fff}
+.track{display:flex;gap:12px;overflow:auto;padding:24px 0 16px;min-width:0}
+.eng{flex:none;width:56px;height:96px;border:2px solid #fff;border-radius:16px 0 0 16px;background:linear-gradient(90deg,var(--saf),#1e3a8a);font:700 9px var(--m);color:#fff;text-align:center;padding-top:44px}
+.car{flex:1 0 130px;cursor:pointer;background:none;border:0;padding:0;font:inherit;color:inherit;text-align:center;position:relative}
+.cb{height:96px;border:2px solid var(--c);background:var(--bg);border-radius:8px;padding:8px;display:flex;flex-direction:column;justify-content:space-between;font:700 10px var(--m);color:var(--t)}
+.car.sel .cb{box-shadow:0 0 0 3px var(--saf),0 10px 25px -5px rgba(255,103,31,.4)}
+.car:focus-visible .cb{outline:3px solid #fff}
+.ct{display:flex;justify-content:space-between}
+.ct b{background:var(--bd);color:#fff;border-radius:4px;padding:0 6px;font:900 10px var(--f)}
+.ppl{font-size:12px}.ppl s{opacity:.25;text-decoration:none}
+.cl{font:700 8px/10px var(--m)}
+.cn{display:block;margin-top:4px;font-weight:900;font-size:10px;color:#94a3b8}
+.car.sel .cn{color:var(--saf)}
+.star{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--saf);color:#fff;font:900 8px/12px var(--f);padding:0 6px;border-radius:4px;white-space:nowrap;z-index:1}
+.insp{background:rgba(0,0,128,.8);border:2px solid var(--saf);border-radius:12px;padding:18px;display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.insp>div:first-child{display:flex;gap:12px;align-items:center;flex:1 1 280px}
+.sq{flex:none;width:48px;height:48px;border-radius:12px;background:var(--saf);display:grid;place-items:center;font:900 18px var(--f);color:#fff}
+.insp h4{color:#fff;font-size:16px;font-weight:900}.insp p{font-size:12px;color:#cbd5e1}
+.tf{background:var(--deep);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:13px;font:700 12px var(--m);color:#fff;display:flex;gap:16px;flex-wrap:wrap}
+.tf i{color:var(--saf);font-style:normal}
+.feat{background:#f4f7fb;padding:64px 0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.fc{position:relative;background:#fff;border-top:4px solid var(--c);border-radius:16px;padding:28px 24px 24px;box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+.fc.span{grid-column:span 2}
+.ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:var(--b)}
+.fc .top{display:flex;justify-content:space-between;align-items:center}
+.chip{border-radius:99px;padding:2px 10px;font-size:12px;font-weight:900;background:#dcfce7;color:var(--green)}
+.fc h3{font-size:18px;line-height:28px;margin:16px 0 8px}
+.fc>p{font-size:12px;line-height:19.5px;color:var(--mut);margin-bottom:16px}
+.sim{background:var(--ink);border:1px solid var(--navy);border-radius:8px;padding:13px;font:400 11px var(--m);color:#cbd5e1}
+.sim div{display:flex;justify-content:space-between}
+.sim .g{background:var(--deep);border-radius:4px;padding:6px 8px;margin-top:4px;color:#67e8f9}.sim .g b{color:var(--saf)}.sim .g span{color:#fb7185}
+.seatw{display:flex;gap:12px;align-items:center;background:#fef2f2;border:2px solid #fecaca;border-radius:12px;padding:14px;font-size:12px}
+.seatw>i{flex:none;width:48px;height:48px;border-radius:8px;background:#fee2e2;border:1px solid #f87171;display:grid;place-items:center;font-style:normal;font-size:20px}
+.seatw b{color:var(--navy);font-weight:900}.seatw em{float:right;background:#fecaca;color:#b91c1c;font:900 10px var(--f);padding:0 6px;border-radius:4px;font-style:normal}
+.seatw small{font-size:10px}.seatw small b{color:var(--green)}
+.bar6{height:6px;background:var(--line);border-radius:9px;margin:6px 0 10px}.bar6 i{display:block;height:100%;border-radius:9px}
+.row{display:flex;justify-content:space-between;font:700 12px var(--f)}
+.foot{background:#f1f5f9;border-radius:8px;padding:10px;display:flex;flex-wrap:wrap;gap:8px 12px;font-size:11px;font-weight:900;color:var(--navy);margin-top:16px}
+.food{position:relative;height:116px;border:2px solid var(--line);border-radius:12px;overflow:hidden;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.2) 50%,transparent),linear-gradient(120deg,#78350f,#b45309 60%,#451a03)} /* TODO: replace with chai photo from Figma node 8:504 */
+.food div{position:absolute;left:10px;right:10px;bottom:10px;display:flex;justify-content:space-between;align-items:flex-end;font:700 10px var(--m);color:#fff}
+.food b{border-radius:4px;padding:2px 8px;font:900 11px var(--f);margin-right:8px}
+.vf{margin-top:16px;border:2px dashed #cbd5e1;border-radius:12px;padding:14px;display:grid;gap:8px}
+.vf h4{color:var(--navy);font-weight:900;font-size:13px}
+.vf input,.vf select{width:100%;height:36px;border:1px solid #cbd5e1;border-radius:8px;padding:0 10px;font:700 12px var(--f);background:#fff}
+.vf .btn{justify-content:center;height:38px}
+.vf .msg{font-size:12px;min-height:16px;font-weight:900}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.live{padding:66px 0 64px;background:#fff}
+.panel{background:#f8fafc;border:2px solid var(--line);border-radius:16px;padding:34px;box-shadow:0 25px 50px -12px rgba(0,0,0,.15)}
+.ctl{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.ctl h3{font-size:20px;line-height:24px}.ctl small{font-size:12px;color:#64748b;font-weight:700}
+.lg{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;font-weight:900}.lg>span{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:4px 12px}
+.split{display:grid;grid-template-columns:1.43fr 1fr;gap:32px}
+.box{background:#fff;border:2px solid var(--line);border-radius:12px;padding:22px}
+.box h5{text-align:center;font-size:12px;color:var(--navy);font-weight:900;text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
+.seats{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.st{height:58px;border-radius:8px;border:2px solid;font:900 12px var(--f);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2}
+.st small{font:700 9px var(--m)}
+.st.f{background:#f0fdf4;border-color:var(--green);color:var(--green)}.st.o{background:#fef2f2;border-color:#f87171;color:#b91c1c}
+.st.on{outline:3px solid var(--saf);outline-offset:1px}
+.det{margin-top:16px;background:#f8fafc;border:2px solid var(--line);border-radius:12px;padding:13px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px}
+.det b{color:var(--navy);font-weight:900}
+.item{border:2px solid var(--line);border-radius:12px;padding:22px;background:#fff;margin-bottom:16px}
+.item h5{display:flex;justify-content:space-between;color:var(--navy);font-weight:900;font-size:14px;margin-bottom:12px}
+.cart{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.cart div{border:1px solid var(--line);border-radius:8px;padding:9px;text-align:center;font-size:12px;font-weight:900;color:var(--navy)}
+.tot{display:flex;justify-content:space-between;align-items:center;background:var(--navy);color:#fff;border-radius:8px;padding:12px;font-weight:900;font-size:12px}
+.of{display:grid;gap:8px;margin-top:12px}
+.of input,.of select{width:100%;height:36px;border:1px solid #cbd5e1;border-radius:8px;padding:0 10px;font:700 12px var(--f);background:#fff}
+.of label{font-size:11px;font-weight:900;color:var(--navy);display:grid;gap:4px}
+.of .btn{justify-content:center;height:38px}.of .msg{font-size:12px;font-weight:900;min-height:16px}
+.pay{display:grid;gap:8px}.pay .btn{justify-content:center;text-decoration:none}.pay .btn.alt{background:var(--green)}.pay small{font-size:11px;color:#64748b;font-weight:700}
+.spec{background:#f4f7fb;padding:66px 0 64px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.pn{background:#fff;border:2px solid var(--line);border-radius:16px;padding:26px}
+.pn h3{font-size:20px;padding-bottom:12px;border-bottom:2px solid var(--line);margin-bottom:16px}
+.tb{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tb div{background:#f1f5f9;border-radius:6px;padding:8px;display:flex;justify-content:space-between;font-size:12px}
+.tb b{color:var(--navy)}
+.sw{border:1px solid var(--line);border-left:4px solid var(--saf);background:#fffaf5;border-radius:6px;padding:13px;margin-bottom:12px;font-size:12px}
+.sw b{display:block;color:var(--navy);font-weight:900}
+.sum{margin-top:20px;background:var(--navy);color:#fff;border-radius:8px;padding:16px;display:flex;justify-content:space-between;gap:12px;font-weight:900;font-size:14px}
+footer{background:var(--deep);color:#cbd5e1;padding:56px 0 24px;border-top:4px solid var(--saf)}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+footer h4{color:#fff;font-size:12px;font-weight:900;letter-spacing:.6px;margin-bottom:12px}
+footer li{list-style:none;font-size:13px;margin-bottom:8px;font-weight:700}footer ul{padding:0}
+footer p{font-size:13px;font-weight:700}
+.fb{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);font-size:12px;font-weight:700}
+.fab{position:fixed;right:24px;bottom:24px;z-index:30;display:flex;gap:12px;align-items:center;background:var(--ink);color:#fff;border:0;border-radius:99px;height:56px;padding:0 22px;box-shadow:0 10px 25px rgba(0,0,0,.3);font:900 13px/1.2 var(--f);cursor:pointer}
+.fab small{display:block;font:700 11px var(--f);color:#cbd5e1}
+:focus-visible{outline:3px solid var(--saf);outline-offset:2px}
+@media(max-width:1100px){.links{display:none}.grid3,.cards,.lv,.fg,.g2,.split{grid-template-columns:1fr 1fr}.fc.span{grid-column:span 2}.q{border-left:0;border-top:2px solid var(--line)}}
+@media(max-width:700px){.w{padding:0 16px}.grid3,.cards,.lv,.fg,.g2,.split,.two{grid-template-columns:1fr}.fc.span{grid-column:auto}.hero h1{font-size:40px;line-height:44px}.head h2{font-size:28px;line-height:32px}.brand small,.cta .dk{display:none}.seats{grid-template-columns:repeat(4,1fr)}.panel{padding:16px}.photo{height:360px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="ribbon"></div>
+<nav><div class="w">
+ <a class="brand" href="#top"><span class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#fff" stroke-width="1"><circle cx="14" cy="14" r="12"/><circle cx="14" cy="14" r="2" fill="#fff"/><g id="sp"></g></svg><i></i></span>
+ <span><b>Bharat RailZen</b><span class="tag">IOT 2026</span><small>भारत रेल ज़ेन • பாரத் ரயில் ஜென் • Indian Railways Next-Gen Telemetry</small></span></a>
+ <div class="links"><a class="on" href="#hud">Quick HUD</a><a href="#radar">Live Congestion Radar</a><a href="#features">Challenges</a><a href="#live">Live Bogie View</a><a href="#specs">Hardware BOM</a></div>
+ <div class="cta"><button class="btn dk" type="button">RailZen Mitra AI</button><a class="btn" href="#radar">Live Radar</a></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="w">
+ <span class="pill"><span class="dot"></span>तिरंगा रेल सुरक्षा • உலகத்தரம் வாய்ந்த IOT • INDIAN RAILWAYS NEXT-GEN TELEMETRY</span>
+ <h1>Bharat RailZen <span>IoT</span></h1>
+ <p class="sub">World's First Seat-Level Telemetry &amp; Real-Time Crowd Congestion Radar for Indian Railways</p>
+ <div class="hud" id="hud">
+  <div class="hud-h"><div><strong>INSTANT PASSENGER STATUS • உடனடி நிலை • त्वरित स्थिति</strong><span class="gl">2-SEC GLANCE</span><small>Train #12615 Grand Trunk Express • Approaching Platform #4</small></div>
+   <div class="stat">● ON-TIME (समय पर / சரியான நேரம்) &nbsp;|&nbsp; <b>+12m Buffer</b></div></div>
+  <div class="cards">
+   <div class="q q1"><div class="qt"><span class="badge" style="background:var(--green)">BEST TO BOARD</span><b style="color:var(--green);font-size:12px">VACANT • காலியாக உள்ளது</b></div>
+    <div class="big">Coach <u>S3</u> : 42% Empty</div><p>🟢 32 Free Berths Available. Walk to middle of platform for easiest boarding.</p>
+    <div class="note" style="background:rgba(220,252,231,.8);color:var(--green)">ஏறுவதற்கு மிகச் சிறந்த பெட்டி S3 • चढ़ने के लिए उत्तम</div></div>
+   <div class="q q2"><div class="qt"><span class="badge" style="background:var(--saf)">LIVE EMPTY SEAT</span><b style="color:var(--saf);font-size:12px">NO WAITLIST</b></div>
+    <div class="big">Seat <em>#45 LB</em></div>
+    <p>Lower Berth (Window Side) • FSR Sensor Confirmed Unoccupied for 45 mins.</p>
+    <div class="note" style="background:rgba(255,237,213,.8);color:#c34005">இருக்கை #45 காலி (LB) • सीट #45 खाली है</div>
+    <a class="btn" style="height:28px;margin-top:10px;padding:0 12px" href="#live">Direct Sit</a></div>
+   <div class="q q3"><div class="qt"><span class="badge" style="background:var(--navy)">PLATFORM HALT</span><b style="color:var(--navy);font-size:12px">BZA JN PLATFORM 4</b></div>
+    <div class="big">4 Min Stop <small style="font-size:14px;color:#64748b">(Door Side: Left)</small></div><p>Pantry fresh tea dispatched right to seat door. Door clear time: 35 seconds.</p>
+    <div class="note" style="background:rgba(219,234,254,.8);color:var(--navy)">இடதுபுற கதவு திறக்கும் • बाएं दरवाजे से उतरें</div></div>
+  </div></div>
+  <div class="trainhero"><div class="photo" role="img" aria-label="High-speed express train on a scenic bridge">
+   <div class="top"><span style="background:rgba(0,0,128,.85);border:1px solid var(--saf)"><span class="dot"></span> USA EXPRESS X VANDE BHARAT HYBRID TELEMETRY</span><span style="background:var(--saf)">⚡ 350 km/h Tested Precision</span></div>
+   <div class="bar"><small>NEXT-GEN HIGH-SPEED INTERLOCK</small><div>Next-Gen High-Speed Interlock • USA Express Aerodynamics &amp; IoT Mesh Latency &lt;12ms</div><code>LATENCY: <b>&lt;12ms</b></code><em>MESH SECURE</em></div></div></div>
+</div></header>
+
+<section class="radar" id="radar"><div class="w">
+ <div class="head"><span class="eyebrow" style="background:rgba(255,103,31,.15);border-radius:99px;padding:4px 12px">LIVE CONGESTION RADAR • நேரடி நெரிசல் ரேடார் • लाइव कंजेस्टिव रडार</span>
+ <h2>Live Bogie Congestion Radar (Coach S1 to S8)</h2><div class="ta">நேரடி பெட்டி நெரிசல் தகவல் • बोगी भीड़भाड़ रडार</div>
+ <p>Bharat RailZen IoT • Indian Railways Next-Gen Telemetry. Tap any train car (S1 to S8) to view real-time density levels, passenger flow vectors, and instant occupancy metrics.<br><b style="color:var(--navy)">நிகழ்நேர நெரிசல் அளவு மற்றும் காலியான இருக்கைகளை உடனே காணுங்கள் | वास्तविक समय भीड़ और खाली सीटों की तुरंत जानकारी।</b></p></div>
+ <div class="legend"><h4>INDIAN RAILWAYS BOGIE CONGESTION SCALE • நெரிசல் மதிப்பீடு • भीड़ स्तर पैमाना</h4>
+  <div class="lv">
+   <div style="background:#f0fdf4;border-color:var(--green)"><i style="background:var(--green)">👤</i><span><b style="color:var(--green)">Level 1: Vacant (&lt;45%)</b>இருக்கை தயார் • காலியாக உள்ளது<small>पर्याप्त सीटें • खाली</small><small>Plenty of seats, sit freely</small></span></div>
+   <div style="background:#fefce8;border-color:#fbbf24"><i style="background:var(--warn)">👥</i><span><b style="color:#b45309">Level 2: Moderate (~65%)</b>மிதமான கூட்டம் • தோள்கள் உரசாது<small>मध्यम भीड़ • सामान्य</small><small>Shoulders not touching</small></span></div>
+   <div style="background:#fff7ed;border-color:var(--saf)"><i style="background:var(--saf)">👥</i><span><b style="color:#c34005">Level 3: Packed (~85%)</b>அதிக கூட்டம் • நின்று செல்ல மட்டுமே<small>खचाखच भरा • खड़े रहने की जगह</small><small>Standing room only</small></span></div>
+   <div style="background:#fef2f2;border-color:var(--bad)"><i style="background:var(--bad)">⚠️</i><span><b style="color:var(--bad)">Level 4: Severe (&gt;100%)</b>தீவிர நெரிசல் (Crush Load) • ஏற வேண்டாம்<small>अत्यधिक भीड़ • तुरंत दूसरा कोच चुनें</small><small>Immediate reroute advised</small></span></div>
+  </div></div>
+ <div class="rail">
+  <div class="rh"><span><span class="dot"></span> LOCOMOTIVE LEAD • லோகோமோட்டிவ் • लोकोमोटिव: WAP-7 #30201 ➔ CHENNAI TOWARDS NEW DELHI</span><b>SPEED: <span>118 km/h</span> | ESP-NOW MESH 100% SYNCED</b></div>
+  <div class="track" id="track"><div class="eng">ENGINE<br>WAP-7</div></div>
+  <div class="insp"><div><span class="sq" id="isq">S3</span><div><h4 id="ittl"></h4><p id="itxt"></p></div></div>
+   <div class="tf"><span>🚪 ENTRY / உள்ளே / प्रवेश: ●●● +1 pax</span><i>EXIT / வெளியே / निकास: ●● -0 pax</i></div></div>
+ </div>
+</div></section>
+
+<section class="feat" id="features"><div class="w">
+ <div class="head"><span class="eyebrow" style="letter-spacing:1.2px">ENGINEERING BREAKTHROUGH • IR STANDARDS</span><h2>5 Core IoT Telemetry Features</h2><p>Transforming dense passenger coaches with ultra low-cost IoT edge controllers and calibrated physical sensor arrays.</p></div>
+ <div class="grid3">
+  <article class="fc" style="--c:var(--saf);--b:#ffedd5"><div class="top"><span class="ic">👥</span><span class="chip">VACANT • காலியாக உள்ளது</span></div><h3>Coach-wise Crowd Detection</h3>
+   <p>Bi-directional TCRT5000 dual-beam infrared sensors mounted on carriage entrance doorways evaluate entry vs exit differentials in real-time, preventing vestibule bottlenecks.</p>
+   <div class="sim"><div><span>TCRT5000 IR Gate</span><b>Delta: +3 pax/min</b></div><div class="g"><span style="color:#67e8f9">Beam-A (Entry) ➔</span><b>🚶 pax</b><span>➔ Beam-B (Exit)</span></div></div>
+   <div class="foot"><span>🔹 4 IR Sensors (₹120)</span><span>🔹 95-97% Accuracy</span></div></article>
+  <article class="fc" style="--c:var(--green);--b:#dcfce7"><span class="chip" style="position:absolute;right:16px;top:16px;background:var(--saf);color:#fff;font-size:10px;letter-spacing:.5px">WORLD FIRST</span><span class="ic">💺</span><h3>Seat Occupancy Detection</h3>
+   <p>FSR-402 pressure resistance matrices embedded under coach seating foam. Uses a 1-sensor arrangement for AC Chair Cars and a custom 3-zone cluster on standard 72-berth Sleeper benches.</p>
+   <div class="seatw"><i>🧍</i><div style="flex:1"><b>Seat #42 (LB)</b><em>68 kg • Seated</em><br><small>FSR-402 Posture Signature: <b>Human Load Validated</b></small></div></div>
+   <div class="foot"><span>🔹 72 FSR Sensors (₹7,200)</span><span>🔹 Bag vs Human Filter</span></div></article>
+  <article class="fc" style="--c:var(--navy);--b:#dbeafe"><span class="ic">📡</span><h3>ETA Prediction &amp; Root-Cause</h3>
+   <p>High-sensitivity NEO-6M GPS modules stream coach velocity and line coordinates. Edge heuristics dissect delay factors like red signal blocks, platform congestion, or track speed caps.</p>
+   <div class="row"><span>Signal Halt (Freight cross):</span><b style="color:var(--bad)">10m</b></div><div class="bar6"><i style="width:40%;background:var(--bad)"></i></div>
+   <div class="row"><span>Terminal Congestion:</span><b style="color:#d97706">8m</b></div><div class="bar6"><i style="width:32%;background:var(--warn)"></i></div>
+   <div class="foot" style="margin-top:8px"><span>🔹 1 GPS Module (₹1,500)</span><span>🔹 ±5 min Precision</span></div></article>
+  <article class="fc" style="--c:var(--saf);--b:#ffedd5"><div class="top"><span class="ic">☕</span><span class="chip" style="border-radius:4px">2-5 Min Delivery</span></div><h3>Platform Pantry Dispatch</h3>
+   <p>Enables passengers to order fresh hot cutting chai and filter coffee right to their seat berth coordinate with guaranteed handover during short halts.</p>
+   <div class="food" role="img" aria-label="Cutting chai in a kulhad and filter coffee in a dabarah tumbler"><div><span><b style="background:var(--saf)">Cutting Chai ₹10</b><b style="background:var(--navy)">Filter Coffee ₹15</b></span>Platform 4</div></div>
+   <form class="vf" id="vf" novalidate><h4>Register as a platform pantry vendor</h4>
+    <input name="name" placeholder="Full name" autocomplete="name" required aria-label="Full name">
+    <div class="two"><input name="email" type="email" placeholder="Email" autocomplete="email" required aria-label="Email"><input name="phone" type="tel" placeholder="Phone" autocomplete="tel" required aria-label="Phone"></div>
+    <select name="coach" required aria-label="Coach"><option value="">Select coach</option><option>S1</option><option>S2</option><option>S3</option><option>S4</option><option>S5</option><option>B1</option><option>A1</option></select>
+    <button class="btn" type="submit">Register vendor</button><div class="msg" id="vmsg" role="status"></div></form>
+   <div class="foot"><span>🔹 Direct Berth Delivery</span><span>🔹 UPI Verified</span></div></article>
+  <article class="fc span" style="--c:var(--navy);--b:#dbeafe"><div style="display:flex;gap:12px;align-items:center"><span class="ic">📊</span><div><h3 style="margin:0">Station-wise Passenger Analytics &amp; Load Optimization</h3><small style="color:#64748b;font-weight:700">Railway Operations Command Console</small></div></div>
+   <div class="two" style="margin:16px 0"><p style="margin:0;font-size:12px;line-height:19.5px;color:var(--mut)">Real-time dashboard forecasts deboarding passenger counts at Vijayawada, Warangal, and Nagpur. Station controllers dynamically optimize platform porter strength, RPF escort teams, and water replenishment crews.</p><p style="margin:0;font-size:12px;line-height:19.5px;color:var(--mut)">Aggregates historical bogie load data across heavy corridors, empowering Indian Railways engineers to dynamically assign extra sleeper and general unreserved coaches to prevent dangerous stampedes.</p></div>
+   <div class="foot" style="margin-top:0"><span>🔹 Cloud Mesh Telemetry</span><span>🔹 Rake-wide Optimization</span><span>🔹 Zero Extra Hardware Cost</span></div></article>
+ </div>
+</div></section>
+
+<!-- Sections 5-7: structure from Figma metadata; text marked VERIFY could not be read (Figma MCP call limit) -->
+<section class="live" id="live"><div class="w">
+ <div class="head"><span class="eyebrow">LIVE SEAT TELEMETRY • PANTRY DEMO</span><h2>Live Seat Telemetry Grid &amp; Pantry Demo</h2><p>Tap any berth to inspect its FSR-402 sensor state.</p></div><!-- VERIFY heading/subtext -->
+ <div class="panel">
+  <div class="ctl"><div><h3>Coach S3 • 72-Berth Sleeper Matrix</h3><small>Live FSR-402 feed via ESP-NOW mesh</small></div><div class="lg"><span><span class="dot"></span>Vacant</span><span><span class="dot" style="background:#ef4444"></span>Occupied</span></div></div><!-- VERIFY -->
+  <div class="split">
+   <div class="box"><h5>72-Seat Berth Matrix</h5><div class="seats" id="seats"></div>
+    <div class="det" aria-live="polite"><div><b id="dt">Seat #45 (LB)</b> <span id="ds" style="color:var(--green);font-weight:900">VACANT</span><br><small id="dx">FSR sensor confirms unoccupied</small></div><a class="btn" href="#hud">Direct Sit</a></div></div>
+   <div><div class="item"><h5><span>🍵 Platform Pantry Dispatch</span><span class="chip">2-5 MIN</span></h5>
+     <div class="food"><div><span><b style="background:var(--saf)">Cutting Chai ₹10</b></span>Platform 4</div></div>
+     <form class="of" id="of" novalidate>
+      <div class="two"><select name="coach" aria-label="Coach"><option value="">Coach</option><option>S1</option><option>S2</option><option selected>S3</option><option>S4</option><option>S5</option><option>B1</option><option>A1</option></select><input name="seat" type="number" min="1" max="72" value="45" placeholder="Seat (tap grid)" aria-label="Seat number"></div>
+      <div class="two"><label>Cutting Chai ₹10<input name="chai" type="number" min="0" max="10" value="1"></label><label>Filter Coffee ₹15<input name="coffee" type="number" min="0" max="10" value="0"></label></div>
+      <input name="phone" type="tel" placeholder="Your phone (10 digits)" autocomplete="tel" aria-label="Phone">
+      <div class="tot"><span>Order total</span><span id="otot">₹10</span></div>
+      <button class="btn" type="submit" id="obtn">Place order</button>
+      <div class="msg" id="omsg" role="status"></div><div id="opay"></div>
+     </form></div>
+    <div class="item" style="margin:0"><h5><span>⏱ Train Punctuality &amp; Delay Reason Engine</span><span class="chip">ON TIME</span></h5>
+     <p style="font-size:12px;margin:0">No signal stalls detected on Krishna River Bridge line. High-speed 110 km/h green corridor active.</p></div></div>
+  </div></div>
+</div></section>
+
+<section class="spec" id="specs"><div class="w">
+ <div class="head"><span class="eyebrow">HARDWARE &amp; SOFTWARE</span><h2>Technical Specifications</h2><p>Low-cost edge hardware with a deterministic software stack.</p></div><!-- VERIFY -->
+ <div class="g2">
+  <div class="pn"><h3>🔧 Hardware Bill of Materials</h3>
+   <div class="tb"><div>TCRT5000 IR Sensor<b>₹30</b></div><div>FSR-402 Sensor<b>₹100</b></div><div>NEO-6M GPS<b>₹1,500</b></div><div>ESP32 Controller<b>VERIFY</b></div></div><!-- VERIFY: Figma table has 10 cells; only sensor prices are known from the feature cards -->
+   <div class="sum"><span>Total Coach Capex</span><span>VERIFY</span></div></div>
+  <div class="pn"><h3>💻 Software Stack</h3>
+   <div class="sw"><b>Embedded Edge Firmware:</b>C++ / FreeRTOS running deterministic interrupt-driven analog sampling on ESP32 with adaptive pressure threshold baseline filtering.</div>
+   <div class="sw"><b>ESP-NOW Intra-Rake Mesh:</b>Enables whole-train communication without cellular dependency. Syncs 24 coach controllers into single gateway uplink.</div>
+   <div class="sw"><b>Cross-Platform Multilingual Passenger App:</b>High contrast Tamil, Hindi, and English interfaces integrated with Indian Railways GIS APIs.</div>
+   <div class="sum"><span>Rake Savings</span><span>VERIFY</span></div></div>
+ </div>
+</div></section>
+
+<footer><div class="w">
+ <div class="fg">
+  <div><h4 style="font-size:24px;letter-spacing:0">Bharat RailZen</h4><p style="font-size:12px;color:var(--ok);margin-bottom:12px">भारत रेल ज़ेन • பாரத் ரயில் ஜென்</p><p>Harmony in Every Journey. World's first seat-level occupancy detection and Japanese Shinkansen-grade congestion radar for Indian Railways.</p></div>
+  <div><h4>QUICK NAVIGATION</h4><ul><li><a href="#hud">Instant Status HUD</a></li><li><a href="#radar">Live Congestion Radar</a></li><li><a href="#features">5 Core Features</a></li><li><a href="#live">Coach S3 Seat Matrix</a></li><li><a href="#specs">Hardware Capex BOM</a></li></ul></div>
+  <div><h4>STANDARDS &amp; PROTOCOLS</h4><ul><li>IR-IoT Precision Spec 2026</li><li>FSR-402 Seat Matrix Calibration</li><li>TCRT5000 Dual IR Gate Logic</li><li>Ashoka Rail Cybersecurity Standard</li></ul></div>
+  <div><h4>COMMAND &amp; SUPPORT</h4><ul><li>✉ VERIFY email</li><li>📞 VERIFY phone</li></ul></div>
+ </div>
+ <div class="fb"><span>© 2026 Bharat RailZen • VERIFY copyright line</span><span>VERIFY footer links</span></div>
+</div></footer>
+<button class="fab" type="button"><span>💬</span><span>RailZen Mitra<small>AI Assistant</small></span></button>
+
+<script>
+var ENDPOINT='https://script.google.com/macros/s/AKfycbwFeAj-uLHcSPG4N0cFIfKwsPRDA46dFvzy9EEIPQlvxU6JDjV9puPYxcVE1XrXrhzCsQ/exec';
+(function(){var g='',i,a;for(i=0;i<24;i++){a=i*Math.PI/12;g+='<line x1="'+(14+3*Math.cos(a))+'" y1="'+(14+3*Math.sin(a))+'" x2="'+(14+11*Math.cos(a))+'" y2="'+(14+11*Math.sin(a))+'"/>'}document.getElementById('sp').innerHTML=g})();
+// id, %, border, bg, badge, text, label, name, people, faded, class, message
+var CARS=[['S1',120,'#ef4444','rgba(127,29,29,.6)','#dc2626','#fca5a5','Severe • தீவிர<br>अत्यधिक','S1 (Sleeper)',4,0,'Sleeper Class','Severe crowding. Choose another coach.'],
+['S2',85,'#f59e0b','rgba(69,26,3,.6)','#d97706','#fcd34d','Packed • கூட்டம்<br>खचाखच','S2 (Sleeper)',3,0,'Sleeper Class','Packed. Standing room only.'],
+['S3 ★',42,'#10b981','rgba(5,46,22,.8)','#046a38','#fff','Vacant • காலி<br>खाली','S3 (Selected)',3,2,'Sleeper Class','Best coach to board! 32 berths open, easy aisle movement, and fast luggage storage.'],
+['S4',68,'#eab308','rgba(66,32,6,.6)','#ca8a04','#fde047','Moderate • மிதமானது<br>मध्यम','S4 (Sleeper)',3,1,'Sleeper Class','Moderate crowd. Shoulders not touching.'],
+['S5',38,'#10b981','rgba(5,46,22,.6)','#046a38','#fff','Vacant • காலி<br>खाली','S5 (Sleeper)',1,0,'Sleeper Class','Vacant. Plenty of seats, sit freely.'],
+['B1 (3A)',62,'#22d3ee','rgba(23,37,84,.6)','#0891b2','#67e8f9','AC 3-Tier • மிதம்<br>मध्यम 3A','B1 (3AC)',3,0,'AC 3-Tier','Moderate crowd in AC 3-Tier.'],
+['A1 (2A)',30,'#34d399','rgba(8,51,68,.6)','#059669','#6ee7b7','AC 2-Tier • காலி<br>खाली 2A','A1 (2AC)',2,0,'AC 2-Tier','Mostly vacant in AC 2-Tier.']];
+var track=document.getElementById('track');
+function show(c){var id=c[0].replace(' ★','').split(' ')[0];document.getElementById('isq').textContent=id;
+ document.getElementById('ittl').textContent='Coach '+id+' • '+c[10]+' • '+c[1]+'% load';document.getElementById('itxt').textContent=c[11]}
+CARS.forEach(function(c,i){var b=document.createElement('button');b.type='button';b.className='car'+(i==2?' sel':'');
+ b.style.cssText='--c:'+c[2]+';--bg:'+c[3]+';--bd:'+c[4]+';--t:'+c[5];
+ var p='',k;for(k=0;k<c[8];k++)p+=(k>=c[8]-c[9]?'<s>👤</s>':'👤');
+ b.innerHTML=(i==2?'<span class="star">BEST • ஏற்றது • सर्वोत्तम</span>':'')+'<div class="cb"><div class="ct"><b>'+c[0]+'</b><span>'+c[1]+'%</span></div><div class="ppl">'+p+'</div><div class="cl">'+c[6]+'</div></div><span class="cn">'+c[7]+'</span>';
+ b.onclick=function(){[].forEach.call(track.querySelectorAll('.car'),function(x){x.classList.remove('sel')});b.classList.add('sel');show(c)};track.appendChild(b)});
+show(CARS[2]);
+var TY=['LB','MB','UB','LB','MB','UB','SL','SU'],sg=document.getElementById('seats');
+for(var n=1;n<=72;n++){(function(n){var occ=n!==45&&((n*7+3)%10<4),t=TY[(n-1)%8],b=document.createElement('button');b.type='button';
+ b.className='st '+(occ?'o':'f')+(n==45?' on':'');b.innerHTML='#'+n+'<small>'+t+'</small>';
+ b.onclick=function(){[].forEach.call(sg.children,function(x){x.classList.remove('on')});b.classList.add('on');
+  document.getElementById('dt').textContent='Seat #'+n+' ('+t+')';var s=document.getElementById('ds');s.textContent=occ?'OCCUPIED':'VACANT';s.style.color=occ?'#b91c1c':'var(--green)';
+  document.getElementById('dx').textContent=occ?'FSR-402 posture signature: human load validated':'FSR sensor confirms unoccupied'};sg.appendChild(b)})(n)}
+document.getElementById('vf').addEventListener('submit',function(e){e.preventDefault();var f=e.target,m=document.getElementById('vmsg'),d=new FormData(f);
+ if(!d.get('name').trim()||!/^\S+@\S+\.\S+$/.test(d.get('email'))||d.get('phone').replace(/\D/g,'').length<10||!d.get('coach')){m.style.color='#b91c1c';m.textContent='Enter your name, a valid email, a 10-digit phone number and a coach.';return}
+ var q=new URLSearchParams({name:d.get('name'),email:d.get('email'),phone:d.get('phone'),coach:d.get('coach')}),btn=f.querySelector('button');btn.disabled=true;m.style.color='#334155';m.textContent='Sending…';
+ fetch(ENDPOINT+'?'+q).then(function(r){return r.json()}).catch(function(){return{unverified:true}})
+ .then(function(j){if(j&&j.unverified){m.style.color='#b45309';m.textContent='Sent, but the server reply could not be read. Please check the sheet.'}else if(j&&j.success){m.style.color='var(--green)';m.textContent='Registered. We will contact you shortly.';f.reset()}else{m.style.color='#b91c1c';m.textContent='Could not register. Please try again.'}})
+ .catch(function(){m.style.color='#b91c1c';m.textContent='Network error. Please try again.'}).then(function(){btn.disabled=false})});
+// ---- Pantry ordering (Razorpay Test/Live via Apps Script) ----
+var PRICE={chai:10,coffee:15},of=document.getElementById('of'),omsg=document.getElementById('omsg'),opay=document.getElementById('opay');
+function api(o){return fetch(ENDPOINT+'?'+new URLSearchParams(o)).then(function(r){return r.json()})}
+function total(){return PRICE.chai*(+of.chai.value||0)+PRICE.coffee*(+of.coffee.value||0)}
+function say(t,c){omsg.style.color=c||'#334155';omsg.textContent=t}
+of.addEventListener('input',function(){document.getElementById('otot').textContent='₹'+total()});
+sg.addEventListener('click',function(e){var b=e.target.closest('.st');if(b)of.seat.value=b.textContent.match(/\d+/)[0]});
+function pay(j,ph){
+ try{new Razorpay({key:j.keyId,amount:j.total*100,currency:'INR',order_id:j.rzpOrderId,name:'Bharat RailZen Pantry',description:'Order '+j.orderId,prefill:{contact:ph},theme:{color:'#ff671f'},
+  handler:function(r){say('Verifying payment…');opay.innerHTML='';
+   api({action:'verify',orderId:j.orderId,rzp_order_id:r.razorpay_order_id,rzp_payment_id:r.razorpay_payment_id,rzp_signature:r.razorpay_signature}).then(function(v){
+    if(!v.success)throw 0;say('Payment verified! Vendor notified. Delivery in 2-5 min at your seat. Order '+j.orderId,'var(--green)')
+   }).catch(function(){say('Payment done but verification failed. Show order '+j.orderId+' to the vendor.','#b91c1c')})},
+  modal:{ondismiss:function(){say('Payment cancelled.','#b91c1c');opay.innerHTML='<div class="pay"><button type="button" class="btn" id="retry">Retry payment</button></div>';document.getElementById('retry').onclick=function(){pay(j,ph)}}}}).open()
+ }catch(x){say('Could not open Razorpay Checkout. Check your internet connection.','#b91c1c')}}
+of.addEventListener('submit',function(e){e.preventDefault();var s=+of.seat.value,ph=of.phone.value.replace(/\D/g,'');
+ if(!of.coach.value||!(s>=1&&s<=72)||ph.length<10||!total()){say('Choose coach, seat (1-72), at least one item, and a 10-digit phone.','#b91c1c');return}
+ var btn=document.getElementById('obtn');btn.disabled=true;say('Placing order…');opay.innerHTML='';
+ api({action:'order',coach:of.coach.value,seat:s,chai:of.chai.value,coffee:of.coffee.value,phone:ph}).then(function(j){
+  if(!j.success)throw new Error(j.error||'failed');say('Order '+j.orderId+' created. Opening payment…','var(--green)');pay(j,ph)
+ }).catch(function(x){say(x.message==='Payment not configured'?'Payment is not set up yet.':'Could not place the order. Please try again.','#b91c1c')}).then(function(){btn.disabled=false})});
+</script>
+</body>
+</html>
